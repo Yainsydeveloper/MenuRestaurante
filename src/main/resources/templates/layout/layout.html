@@ -34,7 +34,7 @@
 		  		
         <div class="section-title">
           <h2>Fijáte en tu <span>Menu<i class="fa-solid fa-utensils"></i></span></h2>
-          <button href="modal.html" type="button" class="btn btn-dark ">Agregar</button>
+          <button data-bs-toggle="modal"data-bs-target="#addModal" type="button" class="btn btn-dark ">Agregar</button>
         </div>
 
         <div class="row">
@@ -55,8 +55,8 @@
             <div class="menu-content">
               <a href="#">Picadas de Queso y fiambre</a><span>
 				  $655.95
-				   <a href="#"><i class="fa-regular fa-pen-to-square"></i></a>
-                   <a href="#"><i class="fa-regular fa-trash-can"></i></i></a>
+				   <a href="#"data-bs-toggle="modal"data-bs-target="#editModal"(click)="onOpenModal('edit')"><i class="fa-regular fa-pen-to-square"></i></a>
+                   <a href="#"data-bs-toggle="modal"data-bs-target="#deleteModal"(click)="onOpenModal('edit')"><i class="fa-regular fa-trash-can"></i></i></a>                
 				  </span>      
             </div>
             <div class="menu-ingredients">
@@ -270,6 +270,98 @@
 
       </div>
     </section><!-- End Specials Section -->
+    <!-- Modal -->
+    <section>
+		<div class="modal fade"id='editModal'tabindex="-1" role="dialog" aria-labelledby='addPlatoModalLabel' aria-hidden="true">
+           <div class="modal-dialog" role="document">
+             <div class="modal-content">
+				 
+               <div class="modal-header">
+                 <h5 class="modal-title" id='addEducacionModalLabel'> Añadir Plato</h5>
+                 <button type="button" class="close"data-dismiss="modal" aria-label="close">
+		         <span aria-hidden="true">&times;</span>
+                 </button>
+                </div>
+                
+       <div class="modal-body">
+         <form #addForm= "ngForm" (ngSubmit)="onAddEducacion(addForm)">
+            <div class="form-group">
+                <label for="tituloEdu">Titulo</label>
+                <input type="text"ngModel name="tituloEdu" class="form-control"id="tituloEdu" placeholder="Titulo" required>
+            </div>
+
+            <div class="form-group">
+                <label for="fechaEdu">Fecha</label>
+                <input type="text" ngModel name="fechaEdu" class="form-control" id="fechaEdu" placeholder="Fecha" required>
+            </div>
+
+            <div class="form-group">
+                <label for="descEdu">Descripcion</label>
+                <input type="text" ngModel name="descEdu" class="form-control" id="descEdu" placeholder="Descripcion" required>
+            </div>
+
+            <div class="form-group">
+                <label for="imagenEdu">Imagen</label>
+                <input type="text" ngModel name="imagenEdu" class="form-control" id="imagenEdu" placeholder="Imaden" required>
+            </div>
+
+            <div class="modal-footer">	
+               <button [disabled]="addForm.invalid" type="submit"class="btn btn-primary">Añadir cambios
+               </button>        
+          </div>
+        </form>
+      </div>
+    </div>
+   </div>    
+</div>
+	</section>
+	<!-- Modal para agregar nuevo plato-->
+<section>
+	<div class="modal" id='addModal'tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+         <form>
+            <div class="form-group">
+                <label for="nombrePlato">Nombre</label>
+                <input type="text" name="nombrePlato" class="form-control"id="nombrePlato" placeholder="Nombre del plato" required>
+            </div>
+
+            <div class="form-group">
+                <label for="descripcion">Descripción</label>
+                <input type="text" name="descripcion" class="form-control" id="descripcion" placeholder="Descripcion del plato" required>
+            </div>
+            <div class="form-group">
+                <label for="tipoDePlato">Tipo de Plato</label>                
+				<select name="select" id="tipo de plato"class="form-control">
+                   <option value="value1">Ensalada</option>
+                   <option value="value2" selected>Bebida</option>
+                   <option value="value3">Entradas</option>
+                   <option value="value3">Menu</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="descripcion">Descripción</label>
+                <input type="text"name="descripcion" class="form-control" id="descripcion" placeholder="Descripcion del plato" required>
+            </div>
+            
+         </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary">Save changes</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="reset" class="btn btn-dark" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
 
 	 <!-- Vendor JS Files -->
   <script th:src="@{/assets/vendor/bootstrap/js/bootstrap.bundle.min.js}"></script>
