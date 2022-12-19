@@ -29,13 +29,13 @@ public MenuController(MenuService menuService) {
 
 @GetMapping("/api/menu/{id}")
 @ResponseStatus(code = HttpStatus.OK)
-public Optional<Menu> byId(@PathVariable("id") int id) {
+public Optional<Menu> byId(@PathVariable("id") int id) {	
    return menuService.find(id);
 }
 
 @GetMapping("/api/menu")
 @ResponseStatus(code = HttpStatus.OK)
-public List<Menu> getUsers(){
+public List<Menu> getMenus(){
 return (List<Menu>) menuService.findAll();
 }
 

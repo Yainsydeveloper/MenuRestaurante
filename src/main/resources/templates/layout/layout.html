@@ -277,32 +277,37 @@
              <div class="modal-content">
 				 
                <div class="modal-header">
-                 <h5 class="modal-title" id='addEducacionModalLabel'> Añadir Plato</h5>
+                 <h5 class="modal-title" id='editModalLabel'> Añadir Plato</h5>
                  <button type="button" class="close"data-dismiss="modal" aria-label="close">
 		         <span aria-hidden="true">&times;</span>
                  </button>
                 </div>
                 
        <div class="modal-body">
-         <form #addForm= "ngForm" (ngSubmit)="onAddEducacion(addForm)">
+         <form>
             <div class="form-group">
-                <label for="tituloEdu">Titulo</label>
-                <input type="text"ngModel name="tituloEdu" class="form-control"id="tituloEdu" placeholder="Titulo" required>
+                <label for="editarNombre">Nombre</label>
+                <input type="text" name="editarNombre" class="form-control"id="editarNombre" placeholder="" required>
             </div>
 
             <div class="form-group">
-                <label for="fechaEdu">Fecha</label>
-                <input type="text" ngModel name="fechaEdu" class="form-control" id="fechaEdu" placeholder="Fecha" required>
+                <label for="editarDescripcion">Descripcion</label>
+                <input type="text" name="editarDescripcion" class="form-control" id="editarDescripcion" placeholder="" required>
             </div>
 
             <div class="form-group">
-                <label for="descEdu">Descripcion</label>
-                <input type="text" ngModel name="descEdu" class="form-control" id="descEdu" placeholder="Descripcion" required>
+                <label for="editarTipoDePlato">Tipo de Plato</label>                
+				<select name="select" id="editaTipoDePlato"class="form-control">
+                   <option value="value1">Ensalada</option>
+                   <option value="value2" selected>Bebida</option>
+                   <option value="value3">Entradas</option>
+                   <option value="value3">Menu</option>
+                </select>
             </div>
 
             <div class="form-group">
-                <label for="imagenEdu">Imagen</label>
-                <input type="text" ngModel name="imagenEdu" class="form-control" id="imagenEdu" placeholder="Imaden" required>
+                <label for="editarPrecio">Precio</label>
+                <input type="number" name="editarPrecio" class="form-control" id="editarPrecio" placeholder="Precio Ejemplo: 340.34" required>
             </div>
 
             <div class="modal-footer">	
@@ -339,7 +344,7 @@
             </div>
             <div class="form-group">
                 <label for="tipoDePlato">Tipo de Plato</label>                
-				<select name="select" id="tipo de plato"class="form-control">
+				<select name="select" id="tipoDePlato"class="form-control">
                    <option value="value1">Ensalada</option>
                    <option value="value2" selected>Bebida</option>
                    <option value="value3">Entradas</option>
@@ -347,8 +352,8 @@
                 </select>
             </div>
             <div class="form-group">
-                <label for="descripcion">Descripción</label>
-                <input type="text"name="descripcion" class="form-control" id="descripcion" placeholder="Descripcion del plato" required>
+                <label for="precio">Precio</label>
+                <input type="number"name="precio" class="form-control" id="precio" placeholder="Precio Ejemplo: 340.34" required>
             </div>
             
          </form>
@@ -356,7 +361,30 @@
       <div class="modal-footer">
         <button type="button" class="btn btn-primary">Save changes</button>
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="reset" class="btn btn-dark" data-dismiss="modal">Close</button>
+       
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Modal para eliminar-->
+<div class="modal" id='deleteModal'tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+         <p>
+			 ¿Seguro que desea eliminar el plato?
+		 </p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary">Si</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="deleteModal">No</button>
+       
       </div>
     </div>
   </div>
