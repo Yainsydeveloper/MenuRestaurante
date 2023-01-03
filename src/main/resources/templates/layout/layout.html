@@ -30,6 +30,7 @@
 <body>
 	 <!-- ======= Menu Section ======= -->
     <section id="menu" class="menu">
+	<button data-bs-toggle="modal"data-bs-target="#registroModal" type="button" class="btn btn-dark ">Registrarse</button>
       <div class="container"> 
 		  		
         <div class="section-title">
@@ -168,9 +169,7 @@
               Plump lobster meat, mayo and crisp lettuce on a toasted bulky roll
             </div>
           </div>
-
         </div>
-
       </div>
     </section><!-- End Menu Section -->
     <!-- ======= Specials Section ======= -->
@@ -270,15 +269,15 @@
 
       </div>
     </section><!-- End Specials Section -->
-    <!-- Modal -->
+    <!-- Modal para editar plato-->
     <section>
 		<div class="modal fade"id='editModal'tabindex="-1" role="dialog" aria-labelledby='addPlatoModalLabel' aria-hidden="true">
            <div class="modal-dialog" role="document">
              <div class="modal-content">
 				 
                <div class="modal-header">
-                 <h5 class="modal-title" id='editModalLabel'> Añadir Plato</h5>
-                 <button type="button" class="close"data-dismiss="modal" aria-label="close">
+                 <h5 class="modal-title" id='editModalLabel'> Modificar datos</h5>
+                 <button type="button" class="close"data-bs-dismiss="modal" aria-label="close">
 		         <span aria-hidden="true">&times;</span>
                  </button>
                 </div>
@@ -326,8 +325,8 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title">Modal title</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <h5 class="modal-title">Agregar un Menú</h5>
+        <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
@@ -359,8 +358,8 @@
          </form>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-primary">Save changes</button>
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Guardar Cambios</button>
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
        
       </div>
     </div>
@@ -372,7 +371,7 @@
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title">Modal title</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
@@ -383,7 +382,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-primary">Si</button>
-        <button type="button" class="btn btn-secondary" data-dismiss="deleteModal">No</button>
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
        
       </div>
     </div>
